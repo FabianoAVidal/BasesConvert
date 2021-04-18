@@ -1,5 +1,5 @@
 public class Main {
-    public static StringBuilder toBinary(int num){
+    public static StringBuilder decimalToBinary(int num){
         StringBuilder lista = new StringBuilder();
         while(num >= 1){
             lista.append(num%2);
@@ -9,9 +9,18 @@ public class Main {
         lista.reverse();
         return lista;
     }
-    public static void main(String[] args) {
-        for(int x = 0;x <= 50;x++){
-            System.out.println(toBinary(x));
+
+    public static StringBuilder decimalToHexa(int num){
+        String[] chars = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F"};
+        StringBuilder lista = new StringBuilder();
+        while(num > 0){
+            lista.append(chars[num%16]);
+            num = num/16;
         }
+        lista.reverse();
+        return lista;
+    }
+    public static void main(String[] args) {
+
     }
 }
